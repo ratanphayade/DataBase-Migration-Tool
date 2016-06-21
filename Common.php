@@ -165,7 +165,7 @@ class Common extends Functions
         $this->closeConnection();
     }
 
-    public function startMigration($rules, $reference, $newTable, $isQuery = false, $handleConnection = true, $type = 'single', $delimiter = ',', $fieldName = '')
+    public function startMigration($rules, $reference, $newTable, $isQuery = false, $handleConnection = true, $type = 'single', $fieldName = '')
     {
         if ($handleConnection) {
             $this->initConnection($newTable);
