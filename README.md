@@ -93,5 +93,6 @@ Example Migration Rules :
 }
 ```
 
-Constant methods should be defined in constants.php
+Constant methods should be defined in constants.php. Constants will be used when you want to associate a value to another value. like change of enum, values
 
+Basic functions are defined in Funcations.php. In case user need some custom methods, it can be writen in the rules file which accepts a array as parameters.
