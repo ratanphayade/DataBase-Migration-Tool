@@ -17,9 +17,13 @@ try {
         require_once getcwd() . '/tables/' . $table . '.php';
         $c = new $table();
         echo "\n$table Migration Started...." . PHP_EOL;
-        $c->run($options);
-        $i++;
-        echo "$table migration Complete...." . PHP_EOL;
+        try{
+            $c->run($options);
+            $i++;
+            echo "$table migration Complete...." . PHP_EOL;
+        } catch (\Exception $e){
+            echo $table. ' Migration Failed. Reason : '. $e->getMessage();
+        }                
     }
     echo "\n\n $i Tables migrated Successfully" . PHP_EOL;
 } catch (Exception $e) {
